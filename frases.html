@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Generador de frases</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #F7F7F7;
+        }
+        
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        
+        .column {
+          flex: 1;
+        }
+        
+        .central-column {
+          max-width: 600px;
+          background-color: #FFFFFF;
+          border-radius: 20px;
+          box-shadow: 0 0 20px #BBBBBB;
+          padding: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .central-column img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        h1 {
+          font-size: 36px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+  
+        p {
+          font-size: 24px;
+          margin-bottom: 50px;
+          text-align: center;
+        }
+  
+        button {
+          background-color: #008CBA;
+          color: #FFF;
+          font-size: 24px;
+          border: none;
+          border-radius: 10px;
+          padding: 15px 30px;
+          margin-bottom: 20px;
+          display: block;
+          margin: 0 auto;
+        }
+  
+        button:hover {
+          background-color: #005A6E;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="column"></div>
+      <div class="column central-column">
+        <div class="content">
+          <h1>Generador de frases</h1>
+          <p>Haz clic en el botón para generar una frase.</p>
+          <p id="frase">Las frases se mostrarán aquí</p>
+          <img id="imagen" src="">
+          <button onclick="f()">Generar frase</button>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+
+    <script>
+        function f() {
+            var opciones = [
+                    { frase: "No hay que ir para atrás ni para darse impulso (Lao Tsé)", imagen: "https://lamenteesmaravillosa.com/wp-content/uploads/2017/08/ilustracion-lao-tse.jpg" },
+                    { frase: "No hay caminos para la paz; la paz es el camino (Mahatma Gandhi)", imagen: "https://www.elcolombiano.com/documents/10157/0/1200x1013/0c60/1200d627/none/11101/FHGH/image_content_34343810_20191001195343.jpg" },
+                    { frase: "Aprende a vivir y sabrás morir bien (Confucio)", imagen: "https://t4.ftcdn.net/jpg/00/08/00/87/360_F_8008743_VG5X9jn9RLKUzo2vyVOgkUGePCmbjDz5.jpg" },
+                    { frase: "Cada día sabemos más y entendemos menos (Albert Einstein)", imagen: "https://biegilycarrasco.files.wordpress.com/2018/03/albert-einstein1.jpg?w=700" },
+                    { frase: "La medida del amor es amar sin medida (San Agustín)", imagen: "https://es.la-croix.com/images/2000/quien-fue-san-agustin.jpeg" },
+                    { frase: "El dinero no puede comprar la vida (Bob Marley)", imagen: "https://img.gruporeforma.com/imagenes/960x640/6/29/5028675.jpg" },
+                    { frase: "Si es bueno vivir, todavía es mejor soñar, y lo mejor de todo, despertar (Antonio Machado)", imagen: "https://cdn.zendalibros.com/wp-content/uploads/2018/03/antonio-machado.jpeg" },
+                    { frase: "La pereza viaja tan despacio que la pobreza no tarda en alcanzarla (Benjamin Franklin)", imagen: "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/12/truco-psicologico-benjamin-franklin-caer-bien-todo-mundo-incluso-enemigos-2158359.jpg" },
+                    { frase: "Pienso, luego existo (René Descartes)", imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg/800px-Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg" },
+                    { frase: "Lo que no te mata, te hace más fuerte (Friedrich Nietzsche)", imagen: "https://www.biografiasyvidas.com/biografia/n/fotos/nietzsche_2.jpg" }
+            ];
+            
+            var randomIndex = Math.floor(Math.random() * opciones.length);
+            var fraseRandom = opciones[randomIndex].frase;
+            var imagenRandom = opciones[randomIndex].imagen;
+            
+            document.getElementById("frase").innerHTML = fraseRandom;
+            document.getElementById("imagen").src = imagenRandom;
+        }
+
+    </script>
+  </body>
+</html>
